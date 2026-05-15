@@ -32,7 +32,7 @@ is_foreign = st.selectbox(
 if st.button("Check Fraud"):
 
     response = requests.post(
-        "http://127.0.0.1:8000/predict",
+        "https://ai-upi-fraud-detection.onrender.com/predict",
         params={
             "amount": amount,
             "is_foreign": is_foreign
@@ -57,7 +57,7 @@ if st.button("Check Fraud"):
 st.subheader("Transaction History")
 
 history = requests.get(
-    "http://127.0.0.1:8000/transactions"
+    "https://ai-upi-fraud-detection.onrender.com/transactions"
 )
 
 history_data = history.json()
